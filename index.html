@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thahasin – Bridal Makeup Artist, Trichy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold:     #C9A96E;
+    --gold-lt:  #E8D5A3;
+    --deep:     #1A0F0A;
+    --warm:     #2C1A10;
+    --cream:    #FAF6EF;
+    --muted:    #8A7560;
+    --rose:     #C0747A;
+    --border:   rgba(201,169,110,0.25);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--deep);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(to bottom, rgba(26,15,10,0.95), transparent);
+    backdrop-filter: blur(6px);
+  }
+  .nav-logo {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2rem; color: var(--gold);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.4rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold-lt); text-decoration: none; opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; overflow: hidden;
+    padding: 8rem 2rem 4rem;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,169,110,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 80% at 10% 50%, rgba(192,116,122,0.06) 0%, transparent 60%),
+      linear-gradient(160deg, #1A0F0A 0%, #2C1A10 50%, #1A0F0A 100%);
+  }
+  /* Decorative mandala ring SVG */
+  .hero-mandala {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(700px, 90vw); opacity: 0.06;
+    pointer-events: none; z-index: 0;
+    animation: slowSpin 80s linear infinite;
+  }
+  @keyframes slowSpin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+  .hero-tag {
+    font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.4rem; position: relative; z-index: 1;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-tag::before, .hero-tag::after {
+    content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--gold); opacity: 0.5;
+  }
+  .hero-name {
+    font-family: 'Pinyon Script', cursive;
+    font-size: clamp(4rem, 14vw, 10rem);
+    color: var(--gold);
+    line-height: 0.9;
+    text-shadow: 0 0 80px rgba(201,169,110,0.25);
+    position: relative; z-index: 1;
+    animation: fadeUp 1.2s ease forwards;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 300; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--gold-lt); margin-top: 0.6rem;
+    position: relative; z-index: 1;
+    animation: fadeUp 1.4s ease forwards;
+  }
+  .hero-sub {
+    font-size: 0.82rem; letter-spacing: 0.15em; color: var(--muted);
+    margin-top: 0.8rem; text-transform: uppercase;
+    position: relative; z-index: 1;
+    animation: fadeUp 1.6s ease forwards;
+  }
+  .hero-cta {
+    margin-top: 3rem;
+    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    position: relative; z-index: 1;
+    animation: fadeUp 1.8s ease forwards;
+  }
+  .btn-primary {
+    padding: 0.85rem 2.4rem;
+    background: var(--gold);
+    color: var(--deep);
+    font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase;
+    border: none; cursor: pointer; text-decoration: none;
+    font-family: 'DM Sans', sans-serif; font-weight: 500;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
+  .btn-ghost {
+    padding: 0.85rem 2.4rem;
+    background: transparent;
+    color: var(--gold);
+    font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase;
+    border: 1px solid var(--gold); cursor: pointer; text-decoration: none;
+    font-family: 'DM Sans', sans-serif; font-weight: 400;
+    transition: all 0.25s;
+  }
+  .btn-ghost:hover { background: rgba(201,169,110,0.1); transform: translateY(-2px); }
+
+  .scroll-hint {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+    z-index: 1; opacity: 0.5;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
+    animation: bounce 2s ease infinite;
+  }
+  .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold), transparent); }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 7rem 2rem; }
+  .section-label {
+    font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .section-label::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--cream);
+  }
+  h2 em { font-style: italic; color: var(--gold); }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* ── ABOUT ── */
+  .about { background: var(--warm); }
+  .about-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-frame {
+    width: 100%; aspect-ratio: 3/4;
+    background: linear-gradient(135deg, rgba(201,169,110,0.15), rgba(192,116,122,0.1));
+    border: 1px solid var(--border);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 1rem; padding: 2rem;
+    position: relative; overflow: hidden;
+  }
+  .about-frame::before {
+    content: '';
+    position: absolute; inset: 8px;
+    border: 1px solid rgba(201,169,110,0.15);
+    pointer-events: none;
+  }
+  .about-frame-icon { font-size: 5rem; opacity: 0.6; }
+  .about-frame-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-style: italic;
+    color: var(--gold-lt); text-align: center; line-height: 1.6;
+  }
+  .about-frame-quote {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 1.6rem; color: var(--gold); text-align: center; opacity: 0.8;
+  }
+  .gold-accent {
+    display: inline-block; width: 40px; height: 2px; background: var(--gold); margin-bottom: 1.5rem;
+  }
+  .about-text p {
+    font-size: 1.05rem; line-height: 1.85; color: rgba(250,246,239,0.75);
+    margin-bottom: 1.4rem;
+  }
+  .about-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 2.5rem;
+    border-top: 1px solid var(--border); padding-top: 2rem;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 600; color: var(--gold); line-height: 1;
+  }
+  .stat-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; }
+
+  /* ── SERVICES ── */
+  .services { background: var(--deep); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
+    margin-top: 3.5rem;
+  }
+  .service-card {
+    background: rgba(44,26,16,0.6);
+    border: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s, transform 0.3s;
+    cursor: default;
+  }
+  .service-card:hover {
+    background: rgba(201,169,110,0.07);
+    transform: translateY(-4px);
+  }
+  .service-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400;
+    color: var(--cream); margin-bottom: 0.8rem;
+  }
+  .service-card p {
+    font-size: 0.88rem; line-height: 1.75; color: var(--muted);
+  }
+  .service-card .price {
+    margin-top: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--gold); font-style: italic;
+  }
+
+  /* ── GALLERY MOSAIC ── */
+  .gallery { background: var(--warm); }
+  .gallery-heading { text-align: center; margin-bottom: 3.5rem; }
+  .gallery-heading .section-label { justify-content: center; }
+  .gallery-heading .section-label::before { display: none; }
+  .gallery-heading .section-label::after { content: ''; width: 30px; height: 1px; background: var(--gold); }
+  .mosaic {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    gap: 4px;
+  }
+  .tile {
+    overflow: hidden; position: relative;
+    background: linear-gradient(135deg, rgba(201,169,110,0.12), rgba(192,116,122,0.08));
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: filter 0.3s;
+  }
+  .tile:hover { filter: brightness(1.15); }
+  .tile-1 { grid-column: 1; grid-row: 1 / 3; }
+  .tile-2 { grid-column: 2 / 4; grid-row: 1; }
+  .tile-3 { grid-column: 4; grid-row: 1 / 3; }
+  .tile-4 { grid-column: 2; grid-row: 2; }
+  .tile-5 { grid-column: 3; grid-row: 2; }
+  .tile-6 { grid-column: 1 / 3; grid-row: 3; }
+  .tile-7 { grid-column: 3 / 5; grid-row: 3; }
+  .tile-emoji { font-size: 3rem; opacity: 0.35; }
+  .tile-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(26,15,10,0.6), transparent);
+    opacity: 0; transition: opacity 0.3s;
+    display: flex; align-items: flex-end; padding: 1rem;
+  }
+  .tile:hover .tile-overlay { opacity: 1; }
+  .tile-overlay-text {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold-lt);
+  }
+
+  /* ── PROCESS ── */
+  .process { background: var(--deep); }
+  .process-inner { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
+  .process-steps { margin-top: 3rem; display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid; grid-template-columns: 50px 1fr;
+    gap: 1.5rem; padding-bottom: 2.5rem;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: ''; position: absolute; left: 24px; top: 36px;
+    width: 1px; height: calc(100% - 12px);
+    background: var(--border);
+  }
+  .step-num {
+    width: 48px; height: 48px; border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--gold); flex-shrink: 0;
+    background: var(--deep); position: relative; z-index: 1;
+  }
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--cream); margin-bottom: 0.4rem;
+  }
+  .step-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.75; }
+
+  .process-quote {
+    background: rgba(201,169,110,0.05);
+    border: 1px solid var(--border);
+    padding: 3rem; margin-top: 2rem;
+    position: relative;
+  }
+  .process-quote::before {
+    content: '"';
+    font-family: 'Pinyon Script', cursive;
+    font-size: 8rem; color: var(--gold); opacity: 0.15;
+    position: absolute; top: -1rem; left: 1.5rem; line-height: 1;
+  }
+  .process-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-style: italic; font-weight: 300;
+    line-height: 1.7; color: var(--gold-lt);
+  }
+  .process-quote cite {
+    display: block; margin-top: 1.2rem;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); font-style: normal;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--warm); text-align: center; }
+  .testi-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem;
+  }
+  .testi-card {
+    background: rgba(26,15,10,0.6); border: 1px solid var(--border);
+    padding: 2rem; text-align: left; position: relative;
+  }
+  .testi-card::before {
+    content: '❝'; font-size: 2rem; color: var(--gold); opacity: 0.4;
+    position: absolute; top: 1rem; right: 1.2rem;
+    font-family: serif;
+  }
+  .testi-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-style: italic; line-height: 1.75;
+    color: rgba(250,246,239,0.8); margin-bottom: 1.2rem;
+  }
+  .testi-stars { color: var(--gold); font-size: 0.8rem; margin-bottom: 0.6rem; }
+  .testi-name { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+  .testi-event { font-size: 0.7rem; color: var(--gold); opacity: 0.7; margin-top: 0.2rem; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--deep); }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-info { display: flex; flex-direction: column; gap: 2rem; margin-top: 2.5rem; }
+  .contact-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .contact-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .contact-detail { }
+  .contact-detail span {
+    display: block; font-size: 0.68rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem;
+  }
+  .contact-detail a, .contact-detail p {
+    color: var(--cream); text-decoration: none; font-size: 1rem;
+    transition: color 0.2s;
+  }
+  .contact-detail a:hover { color: var(--gold); }
+
+  .contact-form { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label {
+    font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    background: rgba(44,26,16,0.8); border: 1px solid var(--border);
+    color: var(--cream); padding: 0.85rem 1rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s;
+    resize: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-group select option { background: var(--warm); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--warm);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer-logo {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3rem; color: var(--gold); display: block; margin-bottom: 0.8rem;
+  }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem; font-style: italic; color: var(--muted); margin-bottom: 1.5rem;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+  .footer-links a {
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 0.72rem; color: rgba(138,117,96,0.5); }
+
+  /* ── WHATSAPP FLOAT ── */
+  .wa-float {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+    width: 54px; height: 54px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulse-wa 3s ease infinite;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+  @keyframes pulse-wa {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    display: flex; align-items: center; justify-content: center; gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+  .divider-line { flex: 1; max-width: 200px; height: 1px; background: var(--border); }
+  .divider-ornament { font-size: 1.2rem; color: var(--gold); opacity: 0.5; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-links { display: none; }
+    .about-inner, .process-inner, .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .mosaic { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+    .tile-1, .tile-2, .tile-3, .tile-4, .tile-5, .tile-6, .tile-7 {
+      grid-column: auto; grid-row: auto; height: 160px;
+    }
+    .testi-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: repeat(3, 1fr); }
+    section { padding: 4rem 1.2rem; }
+    .footer-links { flex-wrap: wrap; gap: 1rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-mandala, .wa-float { animation: none; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Thahasin</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <!-- SVG mandala -->
+  <svg class="hero-mandala" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="190" stroke="#C9A96E" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="160" stroke="#C9A96E" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="120" stroke="#C9A96E" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="80" stroke="#C9A96E" stroke-width="0.5"/>
+    <line x1="200" y1="10" x2="200" y2="390" stroke="#C9A96E" stroke-width="0.5"/>
+    <line x1="10" y1="200" x2="390" y2="200" stroke="#C9A96E" stroke-width="0.5"/>
+    <line x1="65" y1="65" x2="335" y2="335" stroke="#C9A96E" stroke-width="0.5"/>
+    <line x1="335" y1="65" x2="65" y2="335" stroke="#C9A96E" stroke-width="0.5"/>
+    <line x1="127" y1="21" x2="273" y2="379" stroke="#C9A96E" stroke-width="0.3"/>
+    <line x1="21" y1="127" x2="379" y2="273" stroke="#C9A96E" stroke-width="0.3"/>
+    <line x1="21" y1="273" x2="379" y2="127" stroke="#C9A96E" stroke-width="0.3"/>
+    <line x1="273" y1="21" x2="127" y2="379" stroke="#C9A96E" stroke-width="0.3"/>
+    <polygon points="200,30 215,70 255,70 225,95 235,135 200,110 165,135 175,95 145,70 185,70" fill="none" stroke="#C9A96E" stroke-width="0.5" opacity="0.6"/>
+    <circle cx="200" cy="200" r="8" fill="#C9A96E" opacity="0.4"/>
+  </svg>
+
+  <div class="hero-tag">Trichy & Chennai</div>
+  <h1 class="hero-name">Thahasin</h1>
+  <p class="hero-title">Bridal Makeup Artist &amp; Hairstylist</p>
+  <p class="hero-sub">5 Years · Traditional · Bridal · Hair Styling</p>
+  <div class="hero-cta">
+    <a href="https://wa.me/917708065524" class="btn-primary" target="_blank">Book via WhatsApp</a>
+    <a href="#gallery" class="btn-ghost">View Portfolio</a>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-visual">
+        <div class="about-frame">
+          <div class="about-frame-icon">💄</div>
+          <p class="about-frame-text">Traditional elegance meets modern artistry. Every face is a canvas — every bride, a masterpiece.</p>
+          <div class="about-frame-quote">"Moon can't shine without darkness"</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">About Thahasin</div>
+        <h2>Where <em>tradition</em> meets artistry</h2>
+        <div class="gold-accent"></div>
+        <p>With over 5 years of professional experience, Thahasin is Trichy's trusted name for bridal and traditional makeup. Trained in classical Indian bridal aesthetics, she brings out the natural beauty of every bride while honouring the rich traditions of Tamil Nadu.</p>
+        <p>From intimate temple weddings to grand receptions, Thahasin's steady hand and artistic eye ensure you feel confident, radiant, and completely yourself on your most cherished day.</p>
+        <p>Serving brides across Trichy, Chennai, and beyond — bringing the studio to you.</p>
+        <div class="about-stats">
+          <div>
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+          <div>
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Happy Brides</div>
+          </div>
+          <div>
+            <div class="stat-num">2</div>
+            <div class="stat-label">Cities Served</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-label">What I Offer</div>
+    <h2>Services crafted for <em>your occasion</em></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">👰</div>
+        <h3>Bridal Makeup</h3>
+        <p>Full bridal look with long-lasting, high-definition makeup tailored to your skin tone and ceremony type. Includes trial session.</p>
+        <div class="price">Enquire for pricing →</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌸</div>
+        <h3>Traditional Makeup</h3>
+        <p>Classical South Indian traditional looks for temple ceremonies, nalangu rituals, haldi, and cultural events. Authentic &amp; elegant.</p>
+        <div class="price">Enquire for pricing →</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💇‍♀️</div>
+        <h3>Bridal Hair Styling</h3>
+        <p>From traditional Kanjivaram-suited buns adorned with gajra to modern braids and half-up styles — all expertly crafted.</p>
+        <div class="price">Enquire for pricing →</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Engagement Makeup</h3>
+        <p>Polished, photogenic looks for your roka or engagement ceremony. Designed to photograph beautifully in all lighting.</p>
+        <div class="price">Enquire for pricing →</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎉</div>
+        <h3>Party &amp; Reception</h3>
+        <p>Glamorous party makeups for reception nights, sangeet, and festive functions. Bold eyes, perfect skin, all evening.</p>
+        <div class="price">Enquire for pricing →</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>At-Home Service</h3>
+        <p>Full studio experience brought to your doorstep. Available across Trichy and Chennai for your convenience.</p>
+        <div class="price">Enquire for pricing →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-heading">
+      <div class="section-label">Portfolio</div>
+      <h2>The <em>work</em> speaks</h2>
+    </div>
+    <div class="mosaic">
+      <div class="tile tile-1">
+        <span class="tile-emoji">👰</span>
+        <div class="tile-overlay"><span class="tile-overlay-text">Tamil Bridal</span></div>
+      </div>
+      <div class="tile tile-2">
+        <span class="tile-emoji">🌺</span>
+        <div class="tile-overlay"><span class="tile-overlay-text">Traditional Look</span></div>
+      </div>
+      <div class="tile tile-3">
+        <span class="tile-emoji">💄</span>
+        <div class="tile-overlay"><span class="tile-overlay-text">Reception Night</span></div>
+      </div>
+      <div class="tile tile-4">
+        <span class="tile-emoji">✨</span>
+        <div class="tile-overlay"><span class="tile-overlay-text">Engagement</span></div>
+      </div>
+      <div class="tile tile-5">
+        <span class="tile-emoji">💇‍♀️</span>
+        <div class="tile-overlay"><span class="tile-overlay-text">Bridal Hair</span></div>
+      </div>
+      <div class="tile tile-6">
+        <span class="tile-emoji">🪷</span>
+        <div class="tile-overlay"><span class="tile-overlay-text">Nalangu Style</span></div>
+      </div>
+      <div class="tile tile-7">
+        <span class="tile-emoji">💍</span>
+        <div class="tile-overlay"><span class="tile-overlay-text">Mehendi Function</span></div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="https://www.instagram.com/thahasin_mua_trichy" target="_blank" class="btn-ghost">See Full Portfolio on Instagram →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-inner">
+      <div>
+        <div class="section-label">How It Works</div>
+        <h2>From <em>first message</em> to bridal glow</h2>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-num">I</div>
+            <div>
+              <div class="step-title">Initial Consultation</div>
+              <div class="step-desc">WhatsApp or call to discuss your look, occasion, skin type, and style preferences. No obligation, just conversation.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">II</div>
+            <div>
+              <div class="step-title">Trial Session</div>
+              <div class="step-desc">A full trial run (recommended for brides) to perfect the look before your big day. Adjustments are welcomed.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">III</div>
+            <div>
+              <div class="step-title">Date Confirmation</div>
+              <div class="step-desc">Secure your date with a small advance booking. Popular dates book out weeks in advance — book early!</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">IV</div>
+            <div>
+              <div class="step-title">Your Bridal Day</div>
+              <div class="step-desc">Thahasin arrives at your location on time, fully equipped, and focused entirely on making you radiant.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="process-quote">
+          <p>Every bride deserves to feel like the most beautiful version of herself — not someone else's idea of beautiful.</p>
+          <cite>— Thahasin</cite>
+        </div>
+        <div style="margin-top:2rem; padding:2rem; border:1px solid var(--border); background:rgba(201,169,110,0.04);">
+          <div class="section-label" style="margin-bottom:1rem;">Quick Facts</div>
+          <div style="display:flex; flex-direction:column; gap:0.8rem;">
+            <div style="display:flex; justify-content:space-between; font-size:0.85rem; border-bottom:1px solid var(--border); padding-bottom:0.7rem;">
+              <span style="color:var(--muted);">Location</span>
+              <span style="color:var(--cream);">Trichy · Chennai</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:0.85rem; border-bottom:1px solid var(--border); padding-bottom:0.7rem;">
+              <span style="color:var(--muted);">Home Service</span>
+              <span style="color:var(--gold);">✓ Available</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:0.85rem; border-bottom:1px solid var(--border); padding-bottom:0.7rem;">
+              <span style="color:var(--muted);">Trial Session</span>
+              <span style="color:var(--gold);">✓ Recommended</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+              <span style="color:var(--muted);">Booking</span>
+              <span style="color:var(--cream);">WhatsApp / Call</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;">
+      <div>Client Love</div>
+    </div>
+    <h2>What <em>brides</em> say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Thahasin made me feel absolutely stunning on my wedding day. She understood exactly what I wanted and delivered beyond my expectations. My family couldn't stop complimenting!</p>
+        <div class="testi-name">Priya R.</div>
+        <div class="testi-event">Tamil Wedding · Trichy</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Very professional and punctual. The traditional silk saree look she created for my reception was perfect — long-lasting and so photogenic. Highly recommend!</p>
+        <div class="testi-name">Kavitha M.</div>
+        <div class="testi-event">Reception · Chennai</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Booked her for my sister's wedding and she was amazing. Arrived on time, worked quickly, and the hair styling was exactly what we asked for. Will definitely book again!</p>
+        <div class="testi-name">Nandhini S.</div>
+        <div class="testi-event">Bridal Party · Trichy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div>
+        <div class="section-label">Get in Touch</div>
+        <h2>Book your <em>bridal look</em></h2>
+        <p style="margin-top:1rem; font-size:0.9rem; color:var(--muted); line-height:1.8;">
+          Reach out via WhatsApp for the fastest response. Popular wedding dates fill up quickly — don't wait!
+        </p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div class="contact-detail">
+              <span>WhatsApp / Call</span>
+              <a href="tel:+917708065524">+91 77080 65524</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail">
+              <span>Service Areas</span>
+              <p>Trichy &amp; Chennai, Tamil Nadu</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📸</div>
+            <div class="contact-detail">
+              <span>Instagram</span>
+              <a href="https://www.instagram.com/thahasin_mua_trichy" target="_blank">@thahasin_mua_trichy</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🎬</div>
+            <div class="contact-detail">
+              <span>Facebook</span>
+              <a href="#" target="_blank">Thahsin mua trichy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Bride / Client name">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Occasion Type</label>
+            <select>
+              <option value="">Select occasion</option>
+              <option>Bridal Makeup</option>
+              <option>Traditional Ceremony</option>
+              <option>Engagement</option>
+              <option>Reception</option>
+              <option>Hair Styling</option>
+              <option>Party / Function</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Event Date</label>
+              <input type="date">
+            </div>
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" placeholder="Trichy / Chennai / Other">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Additional Details</label>
+            <textarea rows="4" placeholder="Tell me about your look, preferences, or any questions..."></textarea>
+          </div>
+          <a href="https://wa.me/917708065524" target="_blank" class="btn-primary" style="text-align:center; display:block; margin-top:0.5rem;">
+            Send via WhatsApp →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Thahasin</a>
+  <p class="footer-tagline">Bridal Makeup Artist &amp; Hairstylist · Trichy &amp; Chennai</p>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.instagram.com/thahasin_mua_trichy" target="_blank">Instagram</a>
+  </div>
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-ornament">✦</div>
+    <div class="divider-line"></div>
+  </div>
+  <p class="footer-copy">© 2025 Thahasin Makeup Artist. All rights reserved. · Trichy, Tamil Nadu</p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/917708065524" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+</body>
+</html>
