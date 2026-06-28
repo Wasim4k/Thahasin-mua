@@ -120,6 +120,7 @@
     border: none; cursor: pointer; text-decoration: none;
     font-family: 'DM Sans', sans-serif; font-weight: 500;
     transition: background 0.25s, transform 0.2s;
+    white-space: nowrap; display: inline-block;
   }
   .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
   .btn-ghost {
@@ -130,6 +131,7 @@
     border: 1px solid var(--gold); cursor: pointer; text-decoration: none;
     font-family: 'DM Sans', sans-serif; font-weight: 400;
     transition: all 0.25s;
+    white-space: nowrap; display: inline-block;
   }
   .btn-ghost:hover { background: rgba(201,169,110,0.1); transform: translateY(-2px); }
 
@@ -482,6 +484,14 @@
   @media (prefers-reduced-motion: reduce) {
     .hero-mandala, .wa-float { animation: none; }
     * { transition: none !important; }
+  }
+
+  @media (max-width: 480px) {
+    .btn-ghost, .btn-primary {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      padding: 0.75rem 1.4rem;
+    }
   }
 </style>
 </head>
